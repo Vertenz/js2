@@ -10,7 +10,7 @@ const products = [
     {id: 4, title: 'Gamepad', price: 4500},
 ];
 
-const renderProduct = (title, price, image = 'https://via.placeholder.com/150C/O https://placeholder.com/' ) => {
+const renderProduct = (title, price, image = 'https://via.placeholder.com/150C/O https://placeholder.com/') => {  /// добавлена картинка и заглушка
     return `<div class="products__item">
                 <a href="#"><img src="${image}" alt="#" class="products__img"></a>
                 <h3 class="products__h">${title}</h3>
@@ -19,18 +19,31 @@ const renderProduct = (title, price, image = 'https://via.placeholder.com/150C/O
             </div>`;
 };
 
-/*
-* Успрощенная версия
 
+//////////////////////////1) Упрощенная версия  ////////////////////////////////////////////////////////////////////
+/*
 const renderProducts = (list) => {
     return document.querySelector('.products').innerHTML = list.map((element) => renderProduct(element.title, element.price));
 };
 */
 
+
+/////////////////////////// 3) Больше нет запятых, так передеатся не весь массив и не создается новый, а берется только объект по индексу /////////////////////
+/*
 const renderProducts = (list) => {
-    for(index = 0; index < list.length; index++ ) {
+    for (index = 0; index < list.length; index++) {
         document.querySelector('.products').innerHTML += renderProduct(list[index].title, list[index].price);
     }
 };
+ */
 
-renderProducts(products);
+/// в ДЗ написано "нопки вызова корзины." так что сделал и переменную с кнопкой, и сделал ее кновпой вызова товара
+let button = document.querySelector('.cart-section__button');
+
+button.addEventListener('click', () => {
+    for (let index = 0; index < products.length; index++) {
+        document.querySelector('.products').innerHTML += renderProduct(products[index].title, products[index].price);
+    }
+});
+
+//renderProducts(products);
