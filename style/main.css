@@ -13,6 +13,10 @@
   background-color: #fffc71;
 }
 
+.header__h {
+  padding-top: 12px;
+}
+
 .menu {
   height: 100px;
   background-color: #f8ffac;
@@ -41,13 +45,16 @@
 .products {
   margin-top: 15px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 25px;
+  grid-template-columns: repeat(3, 200px);
+  grid-gap: 80px;
+  justify-content: space-around;
 }
 .products__item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5px;
+  outline: 1px solid lavender;
 }
 .products__h {
   margin-top: 10px;
