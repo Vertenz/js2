@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #0a0a23;
+    transition: 1s;
+}
+header {
+    height: 150px;
+    background-color: black;
+    display: flex;
+    color: wheat;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: wheat;
+    margin-left: 90px;
+}
+
+main {
+    padding: 50px;
+}
+
+section {
+    margin: 15px;
+}
+
+input {
+    width: 330px;
+    height: 22px;
+    color: white;
+    padding: 10px;
+    font-size: large;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+label {
+    font-size: larger;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    color: white;
+    font-size: large;
+    padding: 10px;
+}
+
+
+.input__form {
+    color: white;
+    display: flex;
+}
+
+.input__fieldset {
+    display: flex;
+}
+
+.input__btn {
+    height: 50px;
+}
+
+.input__btn:hover {
+    background-color: white;
+    color: #0a0a23;
+}
+
+.button-box {
+    margin: 15px;
+    display: flex;
+}
+
+.result, .result_2 {
+    height: 527px;
+    min-width: 150px;
+    max-width: 254px;
+    margin-top: 9px;
+    margin-left: 25px;
+    outline: 1px solid #30344a;
+    color: white;
+    font-size: large;
+    padding: 10px;
+}
+#btn-hw1, #btn-hw2, #btn-hw3 {
+    outline: 3px solid white;
+    width: 325px;
+    height: 44px;
+    margin-top: 3px;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#btn-hw1:hover, #btn-hw2:hover, #btn-hw3:hover {
+    background-color: white;
+    color: #0a0a23;
+}
+
+.ex {
+    color: grey;
+}
+
+.error {
+    outline: 3px solid #912b1b;
+    border-color: red;
+}
+
+input:focus {
+    border-width: 3px;
+    background-color: #0A0A34;
+}
