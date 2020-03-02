@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Lesson 3</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+            integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="vue" id="app">
+    <header class="header center">
+        <h1 class="header__h">Lesson 3</h1>
+    </header>
+    <div class="menu center">
+        <label for="search">
+            <input type="text" id="search" v-model="searchName" v-model="filter(searchName, $event)">
+            <button @click="filter(searchName, $event)"><i class="fas fa-search"></i></button>
+        </label>
+        <button class="cart-section__button" type="button" @click="cartVisible = !cartVisible">Корзина</button>
+        <div class="cart-box" v-show="cartVisible">
+            <h1>Товары в рарзине:</h1>
+            <p ref="none"></p>
+                <div class="products__item" v-for="product of cartProducts" :key="product.id_product">
+                    <img :src="imgCatalog" alt="Some img">
+                    <h3 class="products__h">{{product.product_name}}</h3>
+                    <p class="products__p">{{product.price}}₽</p>
+                    <button class="products__btn" @click="addProduct(product)">Купить</button>
+                </div>
+            </div>
+    </div>
+    <section class="cart-section center">
+        <main>
+            <section class="search" v-show="!isVisible">
+                <h1>Результаты поиска:</h1>
+                <p ref="noneSearch"></p>
+                <div class="products">
+                    <div class="products__item" v-for="product of products" :key="product.id_product">
+                        <img :src="imgCatalog" alt="Some img">
+                        <h3 class="products__h">{{product.product_name}}</h3>
+                        <p class="products__p">{{product.price}}₽</p>
+                        <button class="products__btn" @click="addProduct(product)">Купить</button>
+                    </div>
+                </div>
+            </section>
+            <div class="products" v-show="isVisible">
+                <div class="products__item" v-for="product of allProducts" :key="allProducts.id_product">
+                    <img :src="imgCatalog" alt="Some img">
+                    <h3 class="products__h">{{product.product_name}}</h3>
+                    <p class="products__p">{{product.price}}₽</p>
+                    <button class="products__btn" @click="addProduct(product)">Купить</button>
+                </div>
+            </div>
+        </main>
+    </section>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
